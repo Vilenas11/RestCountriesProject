@@ -4,15 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_flags_blurred"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/WelcomeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:fontFamily="@font/bebasneue_regular"
+        android:gravity="center"
+        android:text="Welcome to the world statistics application!"
+        android:textColor="@color/black"
+        android:textSize="32dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/clickAnywhereTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click anywhere to get start"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/bebasneue_regular"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/WelcomeTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

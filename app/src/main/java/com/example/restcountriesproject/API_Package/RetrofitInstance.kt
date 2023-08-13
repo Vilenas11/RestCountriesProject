@@ -6,10 +6,12 @@ import retrofit2.create
 
 object RetrofitInstance {
     private val retrofit by lazy {
-        Retrofit.Builder().baseUrl("https://restcountries.com/v3.1")
+        Retrofit.Builder()
+            .baseUrl("https://restcountries.com/v3.1/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-    val apiInterface by lazy {
-        retrofit.create(ApiInterface::class.java)}
+    val api: ApiInterface by lazy{
+        retrofit.create(ApiInterface::class.java)
+    }
 }

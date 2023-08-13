@@ -1,8 +1,7 @@
-package com.example.restcountriesproject.API_Package
+package com.example.restcountriesproject.api_packages
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object RetrofitInstance {
     private val retrofit by lazy {

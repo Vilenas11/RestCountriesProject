@@ -1,0 +1,60 @@
+package com.example.restcountriesproject.adapters
+
+import android.content.Context
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.restcountriesproject.R
+import com.example.restcountriesproject.data_package.Country
+
+class RecyclerViewAdapter(var listOfCountries : List<Country>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
+    lateinit var context: Context
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        //val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.)
+//        var flagImageView : ImageView
+//        var countryNameTextView : TextView
+        val flagImageView: ImageView = itemView.findViewById(R.id.imageView4)
+        val textViewHehe: TextView = itemView.findViewById(R.id.textView3)
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerViewAdapter.ViewHolder {
+        context = parent.context
+        val inflater = LayoutInflater.from(context)
+        val contactView = inflater.inflate(R.layout.recycler_view_row, parent, false)
+        return ViewHolder(contactView)
+    }
+
+    override fun onBindViewHolder(viewHolder: RecyclerViewAdapter.ViewHolder, position: Int) {
+//        val kazkas : Country = listOfCountries.get(position)
+//        val itemTextView = viewHolder.textViewHehe
+//        val itemImageView = viewHolder.flagImageView
+//        itemTextView.text = kazkas.name?.common
+//        Glide.with(itemImageView.context)
+//            .load(kazkas.flags?.png)
+//            .into(itemImageView)
+        Log.i("Response1", "KAS CIA NAXUUUUUUUJ: ${listOfCountries.get(position).flags!!.png}")
+
+        viewHolder.textViewHehe.text = listOfCountries.get(position).name!!.common.toString()
+        Glide.with(context)
+            .load(listOfCountries.get(position).flags!!.png)
+            .into(viewHolder.flagImageView)
+
+    }
+
+    override fun getItemCount(): Int {
+        return listOfCountries.size
+    }
+    fun setFilteredList (listOfCountries: List<Country>){
+        this.listOfCountries = listOfCountries
+        notifyDataSetChanged()
+    }
+}

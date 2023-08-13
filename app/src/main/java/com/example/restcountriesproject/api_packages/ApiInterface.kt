@@ -1,7 +1,6 @@
-package com.example.restcountriesproject.API_Package
+package com.example.restcountriesproject.api_packages
 
 import com.example.restcountriesproject.data_package.Country
-import retrofit2.Call
 import retrofit2.http.GET
 
 interface ApiInterface {

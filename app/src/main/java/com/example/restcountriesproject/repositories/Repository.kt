@@ -1,6 +1,6 @@
-package com.example.restcountriesproject.Repositories
+package com.example.restcountriesproject.repositories
 
-import com.example.restcountriesproject.API_Package.RetrofitInstance
+import com.example.restcountriesproject.api_packages.RetrofitInstance
 import com.example.restcountriesproject.data_package.Country
 
 class Repository {

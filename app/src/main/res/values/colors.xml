@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="paleBlue">#7433FF</color>
+    <color name="elephantsBone">#F7DDB2</color>
 </resources>

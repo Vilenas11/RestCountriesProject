@@ -25,7 +25,6 @@ class ThirdActivity : AppCompatActivity() {
         binding.countryVariable = countryObject
         val image : ImageView = findViewById(R.id.imageViewThirdLayuout)
 
-        Log.i("RESPONSE1000", "${intent.getStringExtra("flagPngKey")}")
         Glide.with(this)
             .load(intent.getStringExtra("flagPngKey").toString())
             .into(image)

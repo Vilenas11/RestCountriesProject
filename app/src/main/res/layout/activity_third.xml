@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="countryVariable"
+            type="com.example.restcountriesproject.data_package.RefurbishedCountry" />
+    </data>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThirdActivity">
+
+    <ImageView
+        android:id="@+id/imageViewThirdLayuout"
+        android:layout_width="219dp"
+        android:layout_height="127dp"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sa" />
+
+    <TextView
+        android:id="@+id/flagAltTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="@font/bebasneue_regular"
+        android:text="@{`Flag abbreviation:   ` + countryVariable.alt}"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewThirdLayuout"
+        tools:layout_editor_absoluteX="184dp" />
+
+    <TextView
+        android:id="@+id/officialNameTextViewId"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bebasneue_regular"
+        android:text="@{`Official Name:   ` + countryVariable.officialName}"
+        app:layout_constraintTop_toBottomOf="@+id/flagAltTextViewId" />
+
+    <TextView
+        android:id="@+id/commonNameTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:fontFamily="@font/bebasneue_regular"
+        android:text="@{`Common name:   ` + countryVariable.commonName}"
+        app:layout_constraintTop_toBottomOf="@+id/officialNameTextViewId" />
+
+    <TextView
+        android:id="@+id/capitalTextViewId"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/bebasneue_regular"
+        android:text="@{`Capital city   ` + countryVariable.capital}"
+        app:layout_constraintTop_toBottomOf="@+id/commonNameTextViewId" />
+
+    <TextView
+        android:id="@+id/areaTextViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/bebasneue_regular"
+        android:text="@{`Area (sq^m):   ` + countryVariable.area}"
+        app:layout_constraintTop_toBottomOf="@+id/capitalTextViewId"
+        tools:layout_editor_absoluteX="174dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,15 +1,20 @@
 package com.example.restcountriesproject.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import android.widget.AdapterView.OnItemClickListener
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.view.menu.MenuView.ItemView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.restcountriesproject.R
+import com.example.restcountriesproject.ThirdActivity
 import com.example.restcountriesproject.data_package.Country
 
 class RecyclerViewAdapter(var listOfCountries : List<Country>) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
@@ -47,6 +52,19 @@ class RecyclerViewAdapter(var listOfCountries : List<Country>) : RecyclerView.Ad
         Glide.with(context)
             .load(listOfCountries.get(position).flags!!.png)
             .into(viewHolder.flagImageView)
+
+        viewHolder.itemView.setOnClickListener{
+            val thirdActivityIntent = Intent(context,ThirdActivity::class.java)
+            thirdActivityIntent.putExtra("flagPngKey", listOfCountries.get(position).flags!!.png)
+            thirdActivityIntent.putExtra("commonNameKey", listOfCountries.get(position).name!!.common.toString())
+            thirdActivityIntent.putExtra("officialNameKey", listOfCountries.get(position).name!!.official.toString())
+            thirdActivityIntent.putExtra("areaKey", listOfCountries.get(position).area)
+            if(listOfCountries.get(position).capital.isNotEmpty())
+                thirdActivityIntent.putExtra("capitalKey", listOfCountries.get(position).capital.get(0))
+            else thirdActivityIntent.putExtra("capitalKey","no capital")
+            thirdActivityIntent.putExtra("flagAltKey", listOfCountries.get(position).flags!!.alt)
+            context.startActivity(thirdActivityIntent)
+        }
 
     }
 

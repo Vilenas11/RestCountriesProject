@@ -23,14 +23,6 @@ class ThirdActivity : AppCompatActivity() {
             intent.getStringExtra("flagAltKey").toString()
         )
         binding.countryVariable = countryObject
-
-//        kazkas = intent.getStringExtra("flagPngKey").toString()
-//        binding.commonNameTextViewId.text = intent.getStringExtra("commonNameKey")
-//        binding.commonNameTextViewId.setText(intent.getStringExtra("commonNameKey"))
-//        binding.officialNameTextViewId.text = intent.getStringExtra("officialNameKey")
-//        binding.areaTextViewId.text = intent.getFloatExtra("areaKey",0.0f).toString()
-//        binding.capitalTextViewId.text = intent.getStringExtra("capitalKey")
-//        binding.flagAltTextViewId.text = intent.getStringExtra("officialNameKey")
         val image : ImageView = findViewById(R.id.imageViewThirdLayuout)
 
         Log.i("RESPONSE1000", "${intent.getStringExtra("flagPngKey")}")

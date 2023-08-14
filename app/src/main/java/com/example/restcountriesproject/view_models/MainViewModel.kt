@@ -14,10 +14,6 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
     fun getCountry(){
         viewModelScope.launch{
             var response = repository.getCountry()
-//            response = response.sortedBy { it.name!!.common } //sort alphabetically
-//            response = response.body().sortedBy { it.name!!.common }
-//            response.body()!!.sortedBy { it.name!!.common }
-            response.body()!!.sortedBy {it.name!!.common  }
             myResponse.value = response
         }
     }

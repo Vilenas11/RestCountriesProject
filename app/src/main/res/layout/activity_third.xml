@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="countryVariable"
             type="com.example.restcountriesproject.data_package.RefurbishedCountry" />
     </data>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
+    android:background="@color/elephantsBone"
     android:layout_height="match_parent"
     tools:context=".ThirdActivity">
 
@@ -25,53 +26,67 @@
 
     <TextView
         android:id="@+id/flagAltTextViewId"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_marginTop="26dp"
         android:fontFamily="@font/bebasneue_regular"
-        android:text="@{`Flag abbreviation:   ` + countryVariable.alt}"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewThirdLayuout"
-        tools:layout_editor_absoluteX="184dp" />
+        android:gravity="center"
+        android:text="@{`Flag description:   ` + countryVariable.alt}"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewThirdLayuout" />
 
     <TextView
         android:id="@+id/officialNameTextViewId"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/bebasneue_regular"
+        android:gravity="center"
         android:text="@{`Official Name:   ` + countryVariable.officialName}"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/flagAltTextViewId" />
 
     <TextView
         android:id="@+id/commonNameTextViewId"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bebasneue_regular"
+        android:gravity="center"
         android:text="@{`Common name:   ` + countryVariable.commonName}"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/officialNameTextViewId" />
 
     <TextView
         android:id="@+id/capitalTextViewId"
-        android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bebasneue_regular"
-        android:text="@{`Capital city   ` + countryVariable.capital}"
+        android:gravity="center"
+        android:text="@{`Capital city:   ` + countryVariable.capital}"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/commonNameTextViewId" />
 
     <TextView
         android:id="@+id/areaTextViewId"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/bebasneue_regular"
+        android:gravity="center"
         android:text="@{`Area (sq^m):   ` + countryVariable.area}"
-        app:layout_constraintTop_toBottomOf="@+id/capitalTextViewId"
-        tools:layout_editor_absoluteX="174dp" />
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/capitalTextViewId" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

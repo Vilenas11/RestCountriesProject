@@ -21,9 +21,6 @@ class RecyclerViewAdapter(var listOfCountries : List<Country>) : RecyclerView.Ad
     lateinit var context: Context
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        //val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.)
-//        var flagImageView : ImageView
-//        var countryNameTextView : TextView
         val flagImageView: ImageView = itemView.findViewById(R.id.imageView4)
         val textViewHehe: TextView = itemView.findViewById(R.id.textView3)
     }
@@ -39,16 +36,9 @@ class RecyclerViewAdapter(var listOfCountries : List<Country>) : RecyclerView.Ad
     }
 
     override fun onBindViewHolder(viewHolder: RecyclerViewAdapter.ViewHolder, position: Int) {
-//        val kazkas : Country = listOfCountries.get(position)
-//        val itemTextView = viewHolder.textViewHehe
-//        val itemImageView = viewHolder.flagImageView
-//        itemTextView.text = kazkas.name?.common
-//        Glide.with(itemImageView.context)
-//            .load(kazkas.flags?.png)
-//            .into(itemImageView)
-        Log.i("Response1", "KAS CIA NAXUUUUUUUJ: ${listOfCountries.get(position).flags!!.png}")
 
         viewHolder.textViewHehe.text = listOfCountries.get(position).name!!.common.toString()
+
         Glide.with(context)
             .load(listOfCountries.get(position).flags!!.png)
             .into(viewHolder.flagImageView)
@@ -59,9 +49,12 @@ class RecyclerViewAdapter(var listOfCountries : List<Country>) : RecyclerView.Ad
             thirdActivityIntent.putExtra("commonNameKey", listOfCountries.get(position).name!!.common.toString())
             thirdActivityIntent.putExtra("officialNameKey", listOfCountries.get(position).name!!.official.toString())
             thirdActivityIntent.putExtra("areaKey", listOfCountries.get(position).area)
+
             if(listOfCountries.get(position).capital.isNotEmpty())
                 thirdActivityIntent.putExtra("capitalKey", listOfCountries.get(position).capital.get(0))
-            else thirdActivityIntent.putExtra("capitalKey","no capital")
+            else
+                thirdActivityIntent.putExtra("capitalKey","no capital")
+
             thirdActivityIntent.putExtra("flagAltKey", listOfCountries.get(position).flags!!.alt)
             context.startActivity(thirdActivityIntent)
         }

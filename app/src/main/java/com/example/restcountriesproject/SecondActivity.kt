@@ -42,7 +42,7 @@ class SecondActivity : AppCompatActivity(){
 
             if(response.isSuccessful){
                 var myRecycler: RecyclerView = findViewById(R.id.countryRecyclerView)
-                var adapter: RecyclerViewAdapter = RecyclerViewAdapter(response.body()!!)
+                var adapter: RecyclerViewAdapter = RecyclerViewAdapter(response.body()!!.sortedBy { it.name!!.common })
                 myRecycler.adapter = adapter
                 myRecycler.layoutManager = LinearLayoutManager(this)
 
